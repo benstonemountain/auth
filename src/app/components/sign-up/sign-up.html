@@ -1,0 +1,18 @@
+<div class="sign-up-wrap">
+  <form class="form-wrap" [formGroup]="signUpForm">
+    <div class="form-item username">
+      <input type="text" placeholder="Usename" formControlName="username"/>
+    </div>
+    <div class="form-item password">
+      <input type="password" placeholder="Password" formControlName="password"/>
+    </div>
+    <div class="sign-up-btn">
+      <button (click)="onSignUp()">Sign Up</button>
+    </div>
+  </form>
+
+  <div class="login-route">
+    <small>Already have an account?</small>
+    <a routerLink="/login">Login</a>
+  </div>
+</div>

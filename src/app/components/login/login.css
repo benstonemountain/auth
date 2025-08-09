@@ -1,0 +1,28 @@
+.login-wrap {
+    border: 1px solid rgb(250, 250, 250);
+    width: 380px;
+    margin: 10px auto;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.form-wrap {
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.sign-up-route {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
