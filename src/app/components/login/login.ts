@@ -13,16 +13,16 @@ export class Login {
     private formBuilder = inject(FormBuilder);
 
   loginForm = this.formBuilder.group({
-    username: ["", [Validators.required]],
+    email: ["", [Validators.required]],
     password: ["", [Validators.required]],
   })
 
   onLogin() {
-    const username = this.loginForm.controls.username.value;
+    const email = this.loginForm.controls.email.value;
     const password = this.loginForm.controls.password.value;
 
-    if(username && password) {
-      console.log(username);
+    if(email && password) {
+      console.log(email);
       console.log(password);
       
     }

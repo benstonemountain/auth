@@ -13,16 +13,16 @@ export class SignUp {
   private formBuilder = inject(FormBuilder);
 
   signUpForm = this.formBuilder.group({
-    username: ["", [Validators.required]],
+    email: ["", [Validators.required]],
     password: ["", [Validators.required]],
   })
 
   onSignUp() {
-    const username = this.signUpForm.controls.username.value;
+    const email = this.signUpForm.controls.email.value;
     const password = this.signUpForm.controls.password.value;
 
-    if(username && password) {
-      console.log(username);
+    if(email && password) {
+      console.log(email);
       console.log(password);
       
     }
