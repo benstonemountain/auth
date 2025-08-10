@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,8 @@ import { RouterLink } from '@angular/router';
 export class Login {
 
     private formBuilder = inject(FormBuilder);
+    private authService = inject(AuthService);
+    private router = inject(Router);
 
   loginForm = this.formBuilder.group({
     email: ["", [Validators.required]],
@@ -21,11 +24,12 @@ export class Login {
     const email = this.loginForm.controls.email.value;
     const password = this.loginForm.controls.password.value;
 
-    if(email && password) {
-      console.log(email);
-      console.log(password);
-      
-    }
+  if (email && password) {
+    this.authService.login(email, password).subscribe({
+      next: () => this.router.navigate(['/landing-page']),
+      error: (err) => console.error(err),
+    });
+  }
   }
 
 }

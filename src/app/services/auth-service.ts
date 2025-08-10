@@ -23,6 +23,7 @@ export class AuthService {
       .pipe(
         tap((res) => {
           console.log("tap, res: ", res);
+          console.log("tap, res.accessToken ", res.accessToken);
           
           localStorage.setItem('token', res.accessToken);
         })
@@ -31,7 +32,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.httpClient
-      .post<{ accessToken: string }>(`${this.basicApiUrl}/login`, {
+      .post<{ accessToken: string }>(`${this.basicApiUrl}/posts`, {
         email,
         password,
       })

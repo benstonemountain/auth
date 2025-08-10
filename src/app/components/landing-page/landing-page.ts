@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.css'
 })
 export class LandingPage {
+
+  private authService = inject(AuthService);
+
+  onLogOut() {
+this.authService.logout();
+  }
 
 }
